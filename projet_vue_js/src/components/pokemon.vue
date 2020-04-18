@@ -1,19 +1,14 @@
 <template>
-
   <div id="app">
-        <nav>
-        <router-link to='/'>Pokedex</router-link>
-        <router-link to='/Pokemon'>Pokemon</router-link>
-    </nav>
-    <div>
-      <router-view></router-view>
-    </div>
+   <h1> HELLO EVERYBODY </h1>
+    <img width="25%" src="../assets/logo.png">
   </div>
 </template>
 <script>
 
+
 export default {
-  name: 'App',
+  name: 'Pokemon',
 }
 </script>
 
