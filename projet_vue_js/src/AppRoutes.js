@@ -13,7 +13,7 @@ let router =  new VueRouter({
             component:Pokedex
         },
         {
-            path:'/pokemon',
+            path:'/pokemon/:id',
             component:Pokemon
         },
     ]
