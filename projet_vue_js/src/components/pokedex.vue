@@ -7,6 +7,7 @@
       <li v-for="poke in pokemons" :key="poke.id">
         {{ poke.id }}
         <img :src="poke.image">
+        {{poke.types}}
       </li>
   </div>
 </template>
