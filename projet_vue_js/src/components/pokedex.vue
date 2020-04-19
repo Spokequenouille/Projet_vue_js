@@ -7,7 +7,7 @@
                       <img :src="pokemon.imagePokedex" alt="Pokemon" style="width:100%">
                       <div class="container">
                           <h4><b>N°{{pokemon.id}}</b></h4>
-                          <p>{{pokemon.nom}}</p>
+                          <p style="margin-bottom:-50px">{{pokemon.nom}}</p>
                           <TypePokemon v-bind:type_un="pokemon.type1" v-bind:type_deux="pokemon.type2"/>
                       </div>
               </router-link>
@@ -64,4 +64,5 @@ b{
   border-radius: 12px;
   text-align: left;
 }
+
 </style>

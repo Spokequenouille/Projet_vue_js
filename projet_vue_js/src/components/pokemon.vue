@@ -12,11 +12,11 @@
         <div style="float:left; margin-left:20%">
           <span class="titre-attribut"> Taille </span>
           <br/>
-          <span class="valeur-attribut"> {{ pokemon.taille }} m </span>
+          <span class="valeur-attribut"> {{ pokemon.taille / 10 }} m </span>
           <br/>
           <span class="titre-attribut"> Poids </span>
           <br/>
-          <span class="valeur-attribut" > {{ pokemon.poids }} </span>
+          <span class="valeur-attribut" > {{ pokemon.poids / 10 }} kg </span>
         </div>
         <div>
           <span class="titre-attribut"> Catégorie </span>
@@ -25,13 +25,13 @@
           <br/>
           <span class="titre-attribut"> Talent </span>
           <br/>
-          <span class="valeur-attribut"> oui </span>
+          <span class="valeur-attribut"> {{ pokemon.talent }} </span>
         </div>
 
       </div>
       <div class="type-pokemon">
-        <span> Type :  </span>
-        <TypePokemon v-bind:type_un="pokemon.type1" v-bind:type_deux="pokemon.type2"/>
+        <span style="display:inline"> Type :  </span>
+        <TypePokemon style="display:inline;"  v-bind:type_un="pokemon.type1" v-bind:type_deux="pokemon.type2"/>
       </div>
       <div class="evolution-pokemon">
         <span> Evolution : {{ pokemon.evolution_url.url }} </span>

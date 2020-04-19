@@ -2,20 +2,20 @@
 
   <div id="app">
     <Navbar/>
+    <GetPokemon/>
     <router-view/>
   </div>
 </template>
 <script>
 
 import Navbar from './components/Navbar'
+import GetPokemon from './components/GetPokemon'
 export default {
   name: 'App',
   components: {
-    Navbar
-  },
-  created() {
-    this.$store.dispatch('getAll')
-  },  
+    Navbar,
+    GetPokemon
+  }
 }
 </script>
 
