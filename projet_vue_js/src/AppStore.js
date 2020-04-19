@@ -40,8 +40,9 @@ export default new Vuex.Store({
                     pokemonList[response.data.id-1].image = response.data.sprites.front_default;
                     pokemonList[response.data.id-1].taille = response.data.height;
                     pokemonList[response.data.id-1].poids = response.data.weight;
-                    //pokemonList[response.data.id-1].talent = response.data.abilities[0].ability.name;
-                    //pokemonList[response.data.id-1].type = response.data.types[1] ;
+                    pokemonList[response.data.id-1].talent = response.data.abilities[0].ability.name;
+                    pokemonList[response.data.id-1].type1 = response.data.types[0].type.name ;
+                    pokemonList[response.data.id-1].type2 = response.data.types[1].type.name ;
                 })
                 .catch(error => console.log(error) )
 

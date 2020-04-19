@@ -1,20 +1,18 @@
 <template>
 
   <div id="app">
-    <nav>
-        <router-link to='/'>Home</router-link>
-        <router-link to='/pokedex'>Pokedex</router-link>
-        <router-link to='/pokemon/1'>Pokemon</router-link>
-    </nav>
-    <div>
-      <router-view></router-view>
-    </div>
+    <Navbar/>
+    <router-view/>
   </div>
 </template>
 <script>
 
+import Navbar from './components/Navbar'
 export default {
   name: 'App',
+  components: {
+    Navbar
+  },
   created() {
     this.$store.dispatch('getAll')
   },  
