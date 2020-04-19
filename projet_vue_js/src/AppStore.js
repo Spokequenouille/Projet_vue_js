@@ -21,7 +21,7 @@ export default new Vuex.Store({
         }
     },
     actions: {
-        getAll(context) {  
+        async getAll(context) {  
             let nb_pokemon = 807;
             let pokemonList = [];
             for(let idx =1; idx <= nb_pokemon; idx++){ 
