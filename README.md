@@ -1,4 +1,5 @@
 # Projet_vue_js : Pokedex
+[![forthebadge made-with-Vue.js](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
 Ce projet a pour but de recréer un Pokedex en Vue.js, en utilisant l'API : https://pokeapi.co/
 
