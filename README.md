@@ -29,10 +29,9 @@ npm run serve
 * [Atom](https://atom.io) - Editeur de textes
 * [PokéAPI](https://pokeapi.co) - API Pokemon
 * [Postman](https://postman.com) - Testeur API
-* [Vue.js](https://vuejs.org- 
 
 ## Auteurs
-* **Tristan COUSSAERT**
-* **Antoine SCHULZ**
+* **Tristan COUSSAERT** _alias_ [@teeztan](https://github.com/teeztan)
+* **Antoine SCHULZ**  _alias_ [@Spokequenouille](https://github.com/Spokequenouille)
 
 
