@@ -2,7 +2,8 @@
 
   <div id="app">
         <nav>
-        <router-link to='/'>Pokedex</router-link>
+        <router-link to='/'>Home</router-link>
+        <router-link to='/pokedex'>Pokedex</router-link>
         <router-link to='/pokemon/1'>Pokemon</router-link>
     </nav>
     <div>
@@ -16,7 +17,7 @@ export default {
   name: 'App',
   created() {
     this.$store.dispatch('getAll')
-  },
+  },  
 }
 </script>
 

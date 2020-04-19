@@ -1,24 +1,12 @@
 <template>
-
   <div id="app">
-
-      CHEPLU
-      <ListePokemon/>
+      Home
   </div>
 </template>
 <script>
 
-import ListePokemon from './liste_pokemon.vue';
-
 export default {
-  name: 'Pokedex',
- data () {
-    return {
-    }
-  },
-  components:{
-    ListePokemon
-  }
+  name: 'Home',
 }
 </script>
 

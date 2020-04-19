@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import axios from "axios";
+//import axios from "axios";
 
 Vue.use(Vuex);
-
+import axios from 'axios';
 export default new Vuex.Store({
     state: {
         pokemons: [],
@@ -19,7 +19,7 @@ export default new Vuex.Store({
         }
     },
     actions: {
-        getAll() {  
+        getAll(context) {  
             let nb_pokemon = 807;
             let pokemonList = [];
             for(let idx =1; idx <= nb_pokemon; idx++){ 
@@ -35,51 +35,18 @@ export default new Vuex.Store({
               })
               axios.get(`https://pokeapi.co/api/v2/pokemon/${idx}/`)
                 .then(response=>{
-                    pokemonList[response.data.id-1].image = `https://pokeres.bastionbot.org/images/pokemon/${idx}.png`;
+                    pokemonList[response.data.id-1].image = `https://pokeres.bastionbot.org/images/pokemon/805.png`,
                     pokemonList[response.data.id-1].taille = response.data.height;
                     pokemonList[response.data.id-1].poids = response.data.weight;
                     pokemonList[response.data.id-1].talent = response.data.abilities;
                     pokemonList[response.data.id-1].type = response.data.types;
-
-                        /*image:response.data.sprites.font_default,
-                        taille:response.data.height,
-                        poids:response.data.weight,
-                        talent:response.data.abilities,
-                        type:response.data.types,
-                    });*/
                 })
                 .catch(error => console.log(error) )
 
             }
-            console.log(pokemonList)
+            context.commit("setPokemons",pokemonList)
+            //this.setState({pokemons: pokemonList})
+            //commit('setPokemons', pokemonList);
           }
     }
 })
-
-/*actions: {
-    //cats
-    getCatsList(context) {
-      //loading...
-      context.commit("SET_CATS_LIST_STATUS_PENDING", true);
-      context.commit("SET_CATS_LIST", []);
-
-      axios
-        .get("https://localhost:3000/cats-list")
-        //success
-        .then(({ data }) => {
-          context.commit("SET_CATS_LIST", data);
-          context.commit("SET_CATS_LIST_STATUS_SUCCESS", true);
-          context.commit("SET_CATS_LIST_STATUS_FAIL", false);
-        })
-        //fail
-        .catch(e => {
-          context.commit("SET_CATS_LIST", null);
-          context.commit("SET_CATS_LIST_STATUS_SUCCESS", false);
-          context.commit("SET_CATS_LIST_STATUS_FAIL", true);
-        })
-        //finally
-        .finally(() => {
-          context.commit("SET_CATS_LIST_STATUS_PENDING", false);
-        });
-    },
-  }*/
