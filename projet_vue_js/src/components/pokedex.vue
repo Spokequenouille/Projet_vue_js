@@ -3,7 +3,11 @@
   <div id="app">
 
       CHEPLU
-      {{pokemons}}
+      {{typeof pokemons}}
+      <li v-for="poke in pokemons" :key="poke.id">
+        {{ poke.id }}
+        <img :src="poke.image">
+      </li>
   </div>
 </template>
 <script>
