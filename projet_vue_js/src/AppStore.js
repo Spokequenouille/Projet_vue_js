@@ -37,20 +37,7 @@ export default new Vuex.Store({
               })
               axios.get(`https://pokeapi.co/api/v2/pokemon/${idx}/`)
                 .then(response=>{
-                    //pokemonList[response.data.id-1].image = `https://www.pokemontrash.com/pokedex/images/sugimori/${('00' + idx).slice(-3)}.png`,
                     pokemonList[response.data.id-1].image = `https://eternia.fr/public/media/pokedex/artworks/${('00' + idx).slice(-3)}.png`,
-                    //pokemonList[response.data.id-1].image = `https://pokeres.bastionbot.org/images/pokemon/${idx}.png`,
-                    //pokemonList[response.data.id-1].image = `https://projectpokemon.org/images/sprites-models/homeimg/poke_capture_${('0000' + idx).slice(-4)}_000_mf_n_00000000_f_n.png`
-                    //pokemonList[response.data.id-1].imageSecours = `https://projectpokemon.org/images/sprites-models/homeimg/poke_capture_${('0000' + idx).slice(-4)}_000_md_n_00000000_f_n.png`
-                    /*urlExists(`https://projectpokemon.org/images/sprites-models/homeimg/poke_capture_${('0000' + idx).slice(-4)}_000_mf_n_00000000_f_n.png`, function(err, exists) {
-                        if (exists == true) {
-                            console.log(exists)
-                            pokemonList[response.data.id-1].image = `https://projectpokemon.org/images/sprites-models/homeimg/poke_capture_${('0000' + idx).slice(-4)}_000_mf_n_00000000_f_n.png`
-                        } else {
-                            console.log(exists)
-                            pokemonList[response.data.id-1].image = `https://projectpokemon.org/images/sprites-models/homeimg/poke_capture_${('0000' + idx).slice(-4)}_000_md_n_00000000_f_n.png`
-                        }
-                    });*/
                     pokemonList[response.data.id-1].taille = response.data.height;
                     pokemonList[response.data.id-1].poids = response.data.weight;
                     pokemonList[response.data.id-1].talent = response.data.abilities;
