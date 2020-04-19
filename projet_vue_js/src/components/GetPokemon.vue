@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">    
+  <div>    
   </div>
 </template>
 
@@ -16,18 +16,18 @@ export default {
             let nb_pokemon = 807;
             let pokemonList = [];
             for(let idx =1; idx <= nb_pokemon; idx++){ 
-              axios.get(`https://pokeapi.co/api/v2/pokemon-species/${idx}/`)
-              .then(response=>{
+              axios.get(`https://pokeapi.co/api/v2/pokemon-species/${idx}/`) //Récupération de l'id, catégorie, évolution, nom, description de tous les pokémons dans une liste grâce à un appel
+              .then(response=>{                                              // API de pokemon-species
                 pokemonList[response.data.id-1]={
                     id:response.data.id,
                     categorie:response.data.genera[6].genus,
                     evolution_url:response.data.evolution_chain,
                     nom:response.data.names[6].name,
-                    description:response.data.flavor_text_entries[5].flavor_text //trouver comment recup que du francais
+                    description:response.data.flavor_text_entries[5].flavor_text
                 };
               }).catch(error => console.log(error) )
-              axios.get(`https://pokeapi.co/api/v2/pokemon/${idx}/`)
-                .then(response=>{
+              axios.get(`https://pokeapi.co/api/v2/pokemon/${idx}/`)      //Récupération des images, de la taille, du poids, du talent et du type de tous les pokémons dans une liste grâce à un appel
+                .then(response=>{                                         // API de pokemon
                     pokemonList[response.data.id-1].imagePokedex = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${idx}.png`,
                     pokemonList[response.data.id-1].imagePokemon = `https://eternia.fr/public/media/pokedex/artworks/${('00' + idx).slice(-3)}.png`,
                     pokemonList[response.data.id-1].taille = response.data.height;
@@ -46,11 +46,5 @@ export default {
  
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.hello {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 </style>

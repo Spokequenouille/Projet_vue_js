@@ -3,7 +3,7 @@
     <div class="conteneur-pokemon">
       <p class="nom-pokemon"> {{ pokemon.nom }} N° {{ pokemon.id }}</p>
       <div class="image-pokemon">
-       <img :src="pokemon.imagePokemon" alt="Pokemon" style="width:40%">
+       <img :src="pokemon.imagePokemon" alt="Pokemon" style="width:60%">
       </div>
       <div class="description">
           <span> {{ pokemon.description }} </span>
@@ -28,7 +28,6 @@
       </div>
       <div class="evolution-pokemon">
         <span> Evolution : {{ pokemon.evolution_url.url }} </span>
-        
       </div>
     </div>
   </div>
@@ -67,19 +66,23 @@ export default {
     background-color: #30a7d7;
     border-radius: 10px;
     width: 30%;
-    margin-left: 35%;
+    margin-left: 50%;
+    padding-bottom: 10px;
 
 }
 
+.image-pokemon{
+  float:left;
+}
+
 .description{
-  margin-top: 5%;
   font-family: "Flexo-Medium",arial,sans-serif;
     color: #212121;
     font-size: 112.5%;
     line-height: 150%;
     padding-left: 20%;
-    padding-right: 20%;
     padding-bottom: 5%;
+    padding-right: 10%;
 
 }
 
@@ -102,6 +105,7 @@ export default {
     white-space: normal;
     word-break: break-word;
     display: block;
+    padding-top: 10px;
 }
 
 .valeur-attribut {
@@ -110,6 +114,7 @@ export default {
     color: #212121;
     white-space: normal;
     word-break: break-word;
+
 }
 
 .column1 {
@@ -133,12 +138,14 @@ export default {
 }
 
 .type-pokemon{
-  padding-top:10px;
+  margin-left: 15%;
+  padding-top:5%;
   font-family: "Flexo-Medium",arial,sans-serif;
     color: #212121;
 }
 
 .evolution-pokemon{
+  margin-left: 380px;
   font-family: "Flexo-Medium",arial,sans-serif;
     color: #212121;
     padding-top:10px;

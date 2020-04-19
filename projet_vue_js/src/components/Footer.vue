@@ -1,6 +1,6 @@
 <template>
   <div id="Footer">    
-    <p> Pokéchiotte par Antoine Schulz et Tristan Coussaert</p>
+    <p> Pokéschulzaert par Antoine Schulz et Tristan Coussaert</p>
   </div>
 </template>
 

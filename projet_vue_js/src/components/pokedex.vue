@@ -1,7 +1,7 @@
 <template>
   <div id="Pokedex">
         <div class="contenu">
-          <p>POKEDEX</p>
+          <h1>POKEDEX</h1>
           <div class="card" v-for="pokemon in pokemons" :key="pokemon.id">
               <router-link :to="{path:'pokemon/'+pokemon.id}">
                       <img :src="pokemon.imagePokedex" alt="Pokemon" style="width:100%">
