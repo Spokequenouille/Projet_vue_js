@@ -1,21 +1,18 @@
 <template>
-
   <div id="app">
-    <Navbar/>
-    <router-view/>
+      <img :src="require(`@/assets/typePokemon/${type_un}.png`)" width="50">
+      <img v-if="typeof type_deux !== 'undefined'" :src="require(`@/assets/typePokemon/${type_deux}.png`)" width="50">
   </div>
 </template>
 <script>
 
-import Navbar from './components/Navbar'
 export default {
-  name: 'App',
-  components: {
-    Navbar
-  },
-  created() {
-    this.$store.dispatch('getAll')
-  },  
+  name: 'TypePokemon',
+  props: {
+      type_un: String,
+      type_deux: String,
+  }
+
 }
 </script>
 
@@ -27,6 +24,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
