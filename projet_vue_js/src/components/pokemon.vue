@@ -31,15 +31,18 @@
       </div>
       <div class="type-pokemon">
         <span> Type :  </span>
+        <TypePokemon v-bind:type_un="pokemon.type1" v-bind:type_deux="pokemon.type2"/>
       </div>
       <div class="evolution-pokemon">
         <span> Evolution : {{ pokemon.evolution_url.url }} </span>
+        
       </div>
     </div>
   </div>
 </template>
 <script>
 
+import TypePokemon from './TypePokemon.vue';
 
 export default {
   name: 'Pokemon',
@@ -48,6 +51,9 @@ export default {
             console.log(this.$store.getters.getPokemons);
             return this.$store.getters.getPokemons[this.$route.params.id-1];
         }
+    },
+    components: {
+      TypePokemon
     }
 }
 </script>
