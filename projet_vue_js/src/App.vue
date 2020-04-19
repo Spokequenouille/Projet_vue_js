@@ -4,17 +4,20 @@
     <Navbar/>
     <GetPokemon/>
     <router-view/>
+    <Footer/>
   </div>
 </template>
 <script>
 
 import Navbar from './components/Navbar'
 import GetPokemon from './components/GetPokemon'
+import Footer from './components/Footer'
 export default {
   name: 'App',
   components: {
     Navbar,
-    GetPokemon
+    GetPokemon,
+    Footer
   }
 }
 </script>

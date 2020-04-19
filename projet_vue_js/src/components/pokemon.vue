@@ -9,25 +9,18 @@
           <span> {{ pokemon.description }} </span>
       </div>
       <div class="statistique">
-        <div style="float:left; margin-left:20%">
+        <div class="column1">
           <span class="titre-attribut"> Taille </span>
-          <br/>
           <span class="valeur-attribut"> {{ pokemon.taille / 10 }} m </span>
-          <br/>
-          <span class="titre-attribut"> Poids </span>
-          <br/>
+          <span class="titre-attribut"> Poids test </span>
           <span class="valeur-attribut" > {{ pokemon.poids / 10 }} kg </span>
         </div>
-        <div>
+        <div class="column2">
           <span class="titre-attribut"> Catégorie </span>
-          <br/>
           <span class="valeur-attribut"> {{ pokemon.categorie }} </span>
-          <br/>
           <span class="titre-attribut"> Talent </span>
-          <br/>
           <span class="valeur-attribut"> {{ pokemon.talent }} </span>
         </div>
-
       </div>
       <div class="type-pokemon">
         <span style="display:inline"> Type :  </span>
@@ -108,6 +101,7 @@ export default {
     text-transform: none;
     white-space: normal;
     word-break: break-word;
+    display: block;
 }
 
 .valeur-attribut {
@@ -118,9 +112,13 @@ export default {
     word-break: break-word;
 }
 
-.column {
-    float: left;
-    margin-top: 1%;
+.column1 {
+  float: left;
+  margin-left: 10%;
+}
+
+.column2 {
+  display: inline-block;
 }
 
 .nom-pokemon {
