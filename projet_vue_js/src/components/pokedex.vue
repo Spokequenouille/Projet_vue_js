@@ -4,7 +4,7 @@
           <p>POKEDEX</p>
           <div class="card" v-for="pokemon in pokemons" :key="pokemon.id">
               <router-link :to="{path:'pokemon/'+pokemon.id}">
-                      <img :src= "'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' +pokemon.id+'.png'" alt="Pokemon" style="width:100%">
+                      <img :src="pokemon.imagePokedex" alt="Pokemon" style="width:100%">
                       <div class="container">
                           <h4><b>N°{{pokemon.id}}</b></h4>
                           <p>{{pokemon.nom}}</p>

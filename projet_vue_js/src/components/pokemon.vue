@@ -3,7 +3,7 @@
     <div class="conteneur-pokemon">
       <p class="nom-pokemon"> {{ pokemon.nom }} N° {{ pokemon.id }}</p>
       <div class="image-pokemon">
-       <img :src="'https://pokeres.bastionbot.org/images/pokemon/'+pokemon.id+'.png'" alt="Pokemon" style="width:40%">
+       <img :src="pokemon.imagePokemon" alt="Pokemon" style="width:40%">
       </div>
       <div class="description">
           <span> {{ pokemon.description }} </span>

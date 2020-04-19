@@ -37,7 +37,8 @@ export default new Vuex.Store({
               })
               axios.get(`https://pokeapi.co/api/v2/pokemon/${idx}/`)
                 .then(response=>{
-                    pokemonList[response.data.id-1].image = `https://eternia.fr/public/media/pokedex/artworks/${('00' + idx).slice(-3)}.png`,
+                    pokemonList[response.data.id-1].imagePokedex = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${idx}.png`,
+                    pokemonList[response.data.id-1].imagePokemon = `https://eternia.fr/public/media/pokedex/artworks/${('00' + idx).slice(-3)}.png`,
                     pokemonList[response.data.id-1].taille = response.data.height;
                     pokemonList[response.data.id-1].poids = response.data.weight;
                     pokemonList[response.data.id-1].talent = response.data.abilities[0].ability.name;
