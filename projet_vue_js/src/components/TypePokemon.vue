@@ -9,7 +9,6 @@
 export default {
   name: 'TypePokemon',
   props: {
-      type: Object,
       type_un: String,
       type_deux: String,
   }
