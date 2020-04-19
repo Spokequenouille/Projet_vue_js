@@ -8,10 +8,10 @@ import axios from 'axios';
 
 export default {
   name: 'GetPokemon',
-  created() {
+  created() { //appel de la fonction getAll a la creation du component
     this.getAll();
   },
-  methods: {
+  methods: { //methodes pour récupérer les données stockées dans l'api de pokeapi
       getAll() {  
             let nb_pokemon = 807;
             let pokemonList = [];
@@ -21,7 +21,6 @@ export default {
                 pokemonList[response.data.id-1]={
                     id:response.data.id,
                     categorie:response.data.genera[6].genus,
-                    evolution_url:response.data.evolution_chain,
                     nom:response.data.names[6].name,
                     description:response.data.flavor_text_entries[5].flavor_text
                 };
@@ -35,9 +34,9 @@ export default {
                     pokemonList[response.data.id-1].talent = response.data.abilities[0].ability.name;
                     pokemonList[response.data.id-1].type1 = response.data.types[0].type.name ;
                     pokemonList[response.data.id-1].type2 = response.data.types[1].type.name ;
-                })
+                    pokemonList[response.data.id-1].stats = response.data.stats;
+                    })
                 .catch(error => console.log(error) )
-
             }
             this.$store.commit('setPokemons', pokemonList);
           }

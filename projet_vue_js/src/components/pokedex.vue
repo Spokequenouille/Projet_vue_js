@@ -2,12 +2,14 @@
   <div id="Pokedex">
         <div class="contenu">
           <h1>POKEDEX</h1>
+          <!-- Affichage du pokedex -->
           <div class="card" v-for="pokemon in pokemons" :key="pokemon.id">
-              <router-link :to="{path:'pokemon/'+pokemon.id}">
+              <router-link :to="{path:'pokemon/'+pokemon.id}"> <!-- Creation du lien vers la page du pokemon -->
                       <img :src="pokemon.imagePokedex" alt="Pokemon" style="width:100%">
                       <div class="container">
                           <h4><b>N°{{pokemon.id}}</b></h4>
                           <p style="margin-bottom:-50px">{{pokemon.nom}}</p>
+                          <!-- Appel du component TypePokemon affichant l'image associe au type -->
                           <TypePokemon v-bind:type_un="pokemon.type1" v-bind:type_deux="pokemon.type2"/>
                       </div>
               </router-link>

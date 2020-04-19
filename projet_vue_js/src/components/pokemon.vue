@@ -26,8 +26,9 @@
         <span style="display:inline"> Type :  </span>
         <TypePokemon style="display:inline;"  v-bind:type_un="pokemon.type1" v-bind:type_deux="pokemon.type2"/>
       </div>
-      <div class="evolution-pokemon">
-        <span> Evolution : {{ pokemon.evolution_url.url }} </span>
+      <!-- Erreur lors de la récupération des stats pour certains pokemons. Permet de pouvoir afficher sans le diagramme-->
+      <div class="stat-pokemon" v-if="typeof pokemon.stats !== 'undefined'"> 
+        <StatPokemon style="display:inline;" v-if="typeof pokemon.stats !== undefined" v-bind:attack="pokemon.stats[4].base_stat" v-bind:defense="pokemon.stats[3].base_stat" v-bind:attack_spe="pokemon.stats[2].base_stat" v-bind:defense_spe="pokemon.stats[1].base_stat" v-bind:hp="pokemon.stats[5].base_stat" v-bind:vitesse="pokemon.stats[0].base_stat" />
       </div>
     </div>
   </div>
@@ -35,17 +36,19 @@
 <script>
 
 import TypePokemon from './TypePokemon.vue';
+import StatPokemon from './StatPokemon.vue';
 
 export default {
   name: 'Pokemon',
    computed: {
+      //recupération des information sur le pokemon grace à l'id passe dans l'url
         pokemon() {
-            console.log(this.$store.getters.getPokemons);
             return this.$store.getters.getPokemons[this.$route.params.id-1];
         }
     },
     components: {
-      TypePokemon
+      TypePokemon,
+      StatPokemon
     }
 }
 </script>

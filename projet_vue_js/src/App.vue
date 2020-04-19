@@ -12,6 +12,7 @@
 import Navbar from './components/Navbar'
 import GetPokemon from './components/GetPokemon'
 import Footer from './components/Footer'
+
 export default {
   name: 'App',
   components: {

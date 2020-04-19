@@ -10,13 +10,13 @@ export default new Vuex.Store({
     getters: {
         getPokemons: state => {
             return state.pokemons
-        }
+        },
     },
     mutations: {
         setPokemons(state, payload) {
             if(payload) {
                 state.pokemons = payload;
             }
-        }
+        },
     }
 })
