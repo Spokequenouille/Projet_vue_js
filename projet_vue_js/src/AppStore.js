@@ -9,7 +9,9 @@ export default new Vuex.Store({
         pokemons: [],
     },
     getters: {
-        getPokemons: state => state.pokemons,
+        getPokemons: state => {
+            return state.pokemons
+        }
     },
     mutations: {
         setPokemons(state, payload) {

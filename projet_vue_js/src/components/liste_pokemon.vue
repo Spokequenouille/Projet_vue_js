@@ -8,7 +8,6 @@
 
 export default {
   name: 'ListePokemon',
-
   computed: {
     pokemons() {
       return this.$store.getters.getPokemons;

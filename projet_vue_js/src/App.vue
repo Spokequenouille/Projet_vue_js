@@ -1,7 +1,7 @@
 <template>
 
   <div id="app">
-        <nav>
+    <nav>
         <router-link to='/'>Home</router-link>
         <router-link to='/pokedex'>Pokedex</router-link>
         <router-link to='/pokemon/1'>Pokemon</router-link>

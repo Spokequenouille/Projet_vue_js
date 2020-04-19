@@ -3,12 +3,12 @@
   <div id="app">
 
       CHEPLU
-      <ListePokemon/>
+      {{pokemons}}
   </div>
 </template>
 <script>
 
-import ListePokemon from './liste_pokemon.vue';
+//import ListePokemon from './liste_pokemon.vue';
 
 export default {
   name: 'Pokedex',
@@ -17,8 +17,13 @@ export default {
     }
   },
   components:{
-    ListePokemon
-  }
+    //ListePokemon
+  },
+  computed: {
+    pokemons() {
+      return this.$store.getters.getPokemons;
+    }
+  },
 }
 </script>
 
