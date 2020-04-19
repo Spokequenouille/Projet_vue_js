@@ -21,7 +21,7 @@ export default new Vuex.Store({
         }
     },
     actions: {
-        getAll(context) {  
+         async getAll(context) {  
             let nb_pokemon = 807;
             let pokemonList = [];
             for(let idx =1; idx <= nb_pokemon; idx++){ 
@@ -37,11 +37,11 @@ export default new Vuex.Store({
               })
               axios.get(`https://pokeapi.co/api/v2/pokemon/${idx}/`)
                 .then(response=>{
-                    pokemonList[response.data.id-1].image = `https://pokeres.bastionbot.org/images/pokemon/805.png`,
+                    pokemonList[response.data.id-1].image = response.data.sprites.front_default;
                     pokemonList[response.data.id-1].taille = response.data.height;
                     pokemonList[response.data.id-1].poids = response.data.weight;
-                    pokemonList[response.data.id-1].talent = response.data.abilities;
-                    pokemonList[response.data.id-1].type = response.data.types;
+                    //pokemonList[response.data.id-1].talent = response.data.abilities[0].ability.name;
+                    //pokemonList[response.data.id-1].type = response.data.types[1] ;
                 })
                 .catch(error => console.log(error) )
 
