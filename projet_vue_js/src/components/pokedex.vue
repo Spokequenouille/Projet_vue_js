@@ -8,6 +8,7 @@
                       <div class="container">
                           <h4><b>N°{{pokemon.id}}</b></h4>
                           <p>{{pokemon.nom}}</p>
+                          <TypePokemon v-bind:type_un="pokemon.type1" v-bind:type_deux="pokemon.type2"/>
                       </div>
               </router-link>
           </div>
@@ -16,28 +17,22 @@
 </template>
 
 <script>
+import TypePokemon from './TypePokemon.vue';
+
 export default {
   name: 'Pokedex',
-  data:function(){
-    return {
-      loading:true
-    };
+  components: {
+    TypePokemon
   },
+
   computed: {
     pokemons() {
-      this.refresh();
-      if(this.loading == true) return undefined;
       return this.$store.getters.getPokemons;
     },
   }, 
   methods: {
-    refresh(){
-      if(this.$store.getters.getPokemons.length < 806){
-        setTimeout(this.refresh,1500);
-      } else {
-        this.loading = false;
-      }
-    }
+
+
   } 
 }
 </script>
